@@ -2,3 +2,16 @@
 // чётные натуральные числа в промежутке от M до N с помощью рекурсии.
 // M = 1; N = 5 -> "2, 4"
 // M = 4; N = 8 -> "4, 6, 8"
+
+void Spacing(int M, int N)
+{
+    if (M % 2 == 0)
+    {
+        M+= 2;
+        Console.Write($"{M}, ");
+    }
+    Spacing(N, M - 1);
+    Console.Write($"{M} ");
+}
+
+Spacing(1, 5);
