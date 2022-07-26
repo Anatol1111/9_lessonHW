@@ -3,18 +3,15 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8 -> 30
 
-void EvenNum(int M, int N)
+void GapNumberSum (int numberM, int numberN, int sum)
 {
-if (N < M) return;
-else if (M % 2 == 0) Console.Write($"{M}, ");
-else
-{
-M++;
-Console.Write($"{M}, ");
-}
-EvenNum(M + 2, N);
+    if (numberM > numberN) 
+    {
+        Console.WriteLine($"Сумма натуральных элементов в промежутке от M до N: {sum}"); 
+        return;
+    }
+    sum = sum + (numberM++);
+    GapNumberSum(numberM, numberN, sum);
 }
 
-EvenNum(1, 5);
-Console.WriteLine();
-EvenNum(4, 8);
+GapNumberSum(1,15, 0);
